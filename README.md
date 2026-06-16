@@ -1,8 +1,8 @@
 # bail
 
-A tiny, zero-overhead Rust crate for cleaner early exit paths.
+A tiny, zero-overhead `no_std` Rust crate for cleaner early-exit paths.
 
-Turn verbose structural error-checking blocks into sleek, fluent method chains using the `?` operator.
+Turn verbose error-checking blocks into sleek, fluent method chains using the `?` operator.
 
 ## 🛠️ The Problem
 
@@ -39,9 +39,24 @@ fn process_data(user: &User) -> Result<(), MyError> {
 }
 ```
 
+## 📦 Option Support
+
+You can also short-circuit functions that return an `Option` instead of a `Result`:
+
+```rust
+use bail::None;
+
+fn find_user(id: u64) -> Option<User> {
+    (id == 0).None()?; // Returns early with None if id is 0
+
+    // Actual logic goes here...
+    Some(user)
+}
+```
+
 ## ⚙️ How it Works
 
-The crate injects a single trait implementation into core booleans. Because the function is marked `#[inline(always)]`, the compiler completely optimizes it away. You get gorgeous syntax with absolutely zero runtime performance cost.
+No macro, pure Rust: the crate injects a single trait implementation into core booleans. Because the function is marked `#[inline(always)]`, the compiler completely optimizes it away. You get gorgeous syntax with absolutely zero runtime performance cost.
 
 ```rust
 pub trait Err<E> {
@@ -62,5 +77,5 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-bail = "0.1.1"
+bail = "0.2.0"
 ```
