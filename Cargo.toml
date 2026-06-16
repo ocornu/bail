@@ -1,0 +1,12 @@
+[package]
+name = "bail"
+version = "0.1.0"
+edition = "2024"
+description = "Lightweight syntactic sugar for cleaner early exits using the ? operator."
+author = "Olivier S. Cornu <o.cornu@gmail.com>"
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+keywords = ["error", "control-flow", "sugar", "boolean", "early-exit"]
+categories = ["rust-patterns", "development-tools"]
+
+[dependencies]
