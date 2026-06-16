@@ -45,13 +45,13 @@
 #[allow(unused)]
 pub trait Err<E> {
     #[allow(non_snake_case)]
-    fn Err(&self, error: E) -> Result<bool, E>;
+    fn Err(&self, error: E) -> Result<(), E>;
 }
 
 impl<E> Err<E> for bool {
     #[inline(always)]
-    fn Err(&self, error: E) -> Result<bool, E> {
-        if *self { Err(error) } else { Ok(false) }
+    fn Err(&self, error: E) -> Result<(), E> {
+        if *self { Err(error) } else { Ok(()) }
     }
 }
 
@@ -81,7 +81,7 @@ mod tests {
 
         // When false, it must return Ok(())
         assert!(result.is_ok());
-        assert_eq!(result.unwrap(), false);
+        assert_eq!(result.unwrap(), ());
     }
 
     // A helper function simulating real-world usage of the ? operator
@@ -108,7 +108,7 @@ mod tests {
     fn test_inline_expression_usage() {
         // Verifies that inline logic works seamlessly without creating a variable first
         let x = 10;
-        let res: Result<bool, &str> = (x > 5).Err("x is too big");
+        let res: Result<(), &str> = (x > 5).Err("x is too big");
         assert_eq!(res, Err("x is too big"));
     }
 }

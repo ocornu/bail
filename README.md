@@ -32,7 +32,6 @@ use bail::Err;
 
 fn process_data(user: &User) -> Result<(), MyError> {
     (user.age < 18).Err(MyError::TooYoung)?;
-
     user.name.trim().is_empty().Err(MyError::InvalidName)?;
 
     // Actual logic goes here...
@@ -46,13 +45,13 @@ The crate injects a single trait implementation into core booleans. Because the 
 
 ```rust
 pub trait Err<E> {
-    fn Err(&self, error: E) -> Result<bool, E>;
+    fn Err(&self, error: E) -> Result<(), E>;
 }
 
 impl<E> Err<E> for bool {
     #[inline(always)]
     fn Err(&self, error: E) -> Result<bool, E> {
-        if *self { Err(error) } else { Ok(false) }
+        if *self { Err(error) } else { Ok(()) }
     }
 }
 ```
@@ -63,5 +62,5 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-bail = "0.1.0"
+bail = "0.1.1"
 ```
