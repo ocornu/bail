@@ -1,8 +1,9 @@
 [package]
 name = "bail"
-version = "0.2.1"
+version = "0.2.2"
 edition = "2024"
 description = "Lightweight syntactic sugar for cleaner early-exits using the ? operator."
+repository = "https://github.com/ocornu/bail.git"
 author = "Olivier S. Cornu <o.cornu@gmail.com>"
 license = "MIT OR Apache-2.0"
 readme = "README.md"

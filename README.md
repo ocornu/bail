@@ -89,5 +89,5 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-bail = "0.2.1"
+bail = "0.2.2"
 ```
