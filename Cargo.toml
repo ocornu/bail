@@ -1,6 +1,6 @@
 [package]
 name = "bail"
-version = "0.2.0"
+version = "0.2.1"
 edition = "2024"
 description = "Lightweight syntactic sugar for cleaner early-exits using the ? operator."
 author = "Olivier S. Cornu <o.cornu@gmail.com>"

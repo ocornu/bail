@@ -1,3 +1,15 @@
+<p align="center">
+  <img src="logo.svg" alt="bail crate logo" width="140" height="140">
+</p>
+
+<h1 align="center">bail</h1>
+
+<p align="center">
+  <a href="https://crates.io/crates/bail"><img src="https://shields.io" alt="Crates.io"></a>
+  <a href="https://docs.rs/bail"><img src="https://docs.rs/badge.svg" alt="Docs.rs"></a>
+  <img src="https://shields.io" alt="no_std compatible">
+</p>
+
 # bail
 
 A tiny, zero-overhead `no_std` Rust crate for cleaner early-exit paths.
@@ -77,5 +89,5 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-bail = "0.2.0"
+bail = "0.2.1"
 ```
