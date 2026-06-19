@@ -12,7 +12,7 @@ impl<E> Err<E> for bool {
 }
 
 #[cfg(test)]
-mod tests {
+mod test {
     use super::*;
 
     // A dummy custom error type to ensure the trait works with non-primitive types
@@ -20,7 +20,7 @@ mod tests {
     struct CustomError(&'static str);
 
     #[test]
-    fn test_err_when_true() {
+    fn err_when_true() {
         let condition = true;
         let result = condition.Err(CustomError("Something went wrong"));
 
@@ -30,7 +30,7 @@ mod tests {
     }
 
     #[test]
-    fn test_ok_when_false() {
+    fn ok_when_false() {
         let condition = false;
         // Specifying the error type via generic parameter so type inference succeeds
         let result = condition.Err(CustomError("No error should happen"));
@@ -50,7 +50,7 @@ mod tests {
     }
 
     #[test]
-    fn test_early_exit_control_flow() {
+    fn early_exit_control_flow() {
         // Test early exit path triggering
         let under_age_result = check_age(16);
         assert_eq!(under_age_result, Err("Too young"));
@@ -61,7 +61,7 @@ mod tests {
     }
 
     #[test]
-    fn test_inline_expression_usage() {
+    fn inline_expression_usage() {
         // Verifies that inline logic works seamlessly without creating a variable first
         let x = 10;
         let res: Result<(), &str> = (x > 5).Err("x is too big");

@@ -12,11 +12,11 @@ impl None for bool {
 }
 
 #[cfg(test)]
-mod tests {
+mod test {
     use super::*;
 
     #[test]
-    fn test_none_when_true() {
+    fn none_when_true() {
         let condition = true;
         let result = condition.None();
 
@@ -25,7 +25,7 @@ mod tests {
     }
 
     #[test]
-    fn test_some_when_false() {
+    fn some_when_false() {
         let condition = false;
         let result = condition.None();
 
@@ -44,7 +44,7 @@ mod tests {
     }
 
     #[test]
-    fn test_option_early_exit_control_flow() {
+    fn early_exit_control_flow() {
         // Test early exit path for Option
         let invalid_item = find_item(0);
         assert_eq!(invalid_item, None);
