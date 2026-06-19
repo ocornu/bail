@@ -2,7 +2,7 @@
 //!
 //! A tiny, zero-overhead `no_std` Rust crate for cleaner early-exit paths.
 //!
-//! Turn verbose error-checking blocks into sleek, fluent method chains using the `?` operator.
+//! Turn verbose error-checking blocks into sleek, fluent method chains using the nifty `?` operator.
 //!
 //! ## 🛠️ The Problem
 //!

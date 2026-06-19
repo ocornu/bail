@@ -13,11 +13,9 @@
   <img src="https://img.shields.io/badge/license-MIT%2FApache--2.0-brightgreen?logo=unlicense&logoColor=white" alt="MIT/Apache-2.0">
 </p>
 
-# bail
-
 A tiny, zero-overhead `no_std` Rust crate for cleaner early-exit paths.
 
-Turn verbose error-checking blocks into sleek, fluent method chains using the `?` operator.
+Turn verbose error-checking blocks into sleek, fluent method chains using the nifty `?` operator.
 
 ## 🛠️ The Problem
 
@@ -72,19 +70,6 @@ fn find_user(id: u64) -> Option<User> {
 ## ⚙️ How it Works
 
 No macro, pure Rust: the crate injects a single trait implementation into core booleans. Because the function is marked `#[inline(always)]`, the compiler completely optimizes it away. You get gorgeous syntax with absolutely zero runtime performance cost.
-
-```rust
-pub trait Err<E> {
-    fn Err(&self, error: E) -> Result<(), E>;
-}
-
-impl<E> Err<E> for bool {
-    #[inline(always)]
-    fn Err(&self, error: E) -> Result<bool, E> {
-        if *self { Err(error) } else { Ok(()) }
-    }
-}
-```
 
 ## 🚀 Installation
 
