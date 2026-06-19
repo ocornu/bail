@@ -5,9 +5,12 @@
 <h1 align="center">bail</h1>
 
 <p align="center">
-  <a href="https://crates.io/crates/bail"><img src="https://shields.io" alt="Crates.io"></a>
-  <a href="https://docs.rs/bail"><img src="https://docs.rs/badge.svg" alt="Docs.rs"></a>
-  <img src="https://shields.io" alt="no_std compatible">
+  <a href="https://crates.io/crates/bail"><img src="https://img.shields.io/crates/v/bail?logo=hackthebox&logoColor=white" alt="crates.io"></a>
+  <a href="https://docs.rs/bail"><img src="https://img.shields.io/docsrs/bail?logo=docs.rs" alt="docs.rs"></a>
+  <a href="https://github.com/ocornu/bail"><img src="https://img.shields.io/badge/github-repo-blue?logo=github" alt="github.com"></a>
+  <br/>
+  <img src="https://img.shields.io/badge/no__std-compatible-brightgreen?logo=rust" alt="no_std">
+  <img src="https://img.shields.io/badge/license-MIT%2FApache--2.0-brightgreen?logo=unlicense&logoColor=white" alt="MIT/Apache-2.0">
 </p>
 
 # bail
