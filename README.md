@@ -77,5 +77,5 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-bail = "0.2.2"
+bail = "0.2.3"
 ```

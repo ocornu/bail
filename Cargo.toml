@@ -1,6 +1,6 @@
 [package]
 name = "bail"
-version = "0.2.2"
+version = "0.2.3"
 edition = "2024"
 description = "Lightweight syntactic sugar for cleaner early-exits using the ? operator."
 repository = "https://github.com/ocornu/bail.git"
