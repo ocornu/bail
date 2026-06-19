@@ -53,4 +53,12 @@ mod test {
         let valid_item = find_item(42);
         assert_eq!(valid_item, Some("Valid Item"));
     }
+
+    #[test]
+    fn inline_expression_usage() {
+        // Verifies that inline logic works seamlessly without creating a variable first
+        let x = 10;
+        let res: Option<()> = (x > 5).None();
+        assert_eq!(res, None);
+    }
 }
